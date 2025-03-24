@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @SpringBootApplication
 public class SpringGithubActionAppApplication {
+
     @Value("${spring.application.name}")
     private String appName;
 
@@ -16,10 +17,13 @@ public class SpringGithubActionAppApplication {
     private String appVersion;
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringGithubAppApplication.class, args);
+        SpringApplication.run(SpringGithubActionAppApplication.class, args);
     }
+
     @GetMapping("/")
     public String index(){
-        return appName+"-"+appVersion;
+        return appName + "-" + appVersion;
     }
+
+
 }
